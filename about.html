@@ -1,5 +1,9 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
     <link
       rel="stylesheet"
@@ -8,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900"
     />
 
-    <title>About Faros</title>
+    <title>About</title>
     <!-- <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," /> -->
 
     <link rel="stylesheet" href="style.css" />
@@ -29,77 +33,171 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
     <div
-      class="relative flex size-full min-h-screen flex-col bg-[#101923] dark group/design-root overflow-x-hidden"
-      style="font-family: 'Work Sans', 'Noto Sans', sans-serif"
+      class="font-[Poppins] md:size-full md:min-h-screen flex-col bg-[#101a23] dark group/design-root"
     >
-      <div class="layout-container flex h-full grow flex-col">
+      <div class="md:layout-container flex h-full grow flex-col">
         <header
-          class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#223649] px-10 py-3"
+          class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#223649] px-7 md:px-10 py-3"
         >
           <div class="flex items-center gap-4 text-white">
-            <div class="size-12">
+            <div class="size-10 md:size-12">
               <img
                 src="https://res.cloudinary.com/df8lfmv1j/image/upload/v1749306709/favicon.ico_sy99lj.png"
                 alt=""
               />
             </div>
             <h2
-              class="text-white text-lg font-medium leading-tight"
+              class="text-white text-sm md:text-lg font-medium leading-tight"
               style="font-family: 'Raleway'"
             >
               Faros Global Church
             </h2>
           </div>
-          <div class="flex flex-1 justify-end gap-8">
-            <div class="flex items-center gap-9">
+          <div
+            class="hidden md:flex md:w-full md:justify-end md:gap-8 text-white text-sm font-medium leading-norma"
+          >
+            <div class="md:flex md:items-center md:gap-9">
               <a
-                class="text-white text-sm font-medium leading-normal"
+                class="text-white text-sm font-medium leading-normal hover:underline"
                 href="./index.html"
                 >Home</a
               >
               <a
-                class="text-white text-sm font-medium leading-normal"
+                class="text-white text-sm font-medium leading-normal hover:underline"
                 href="./events.html"
                 >Events</a
               >
               <a
-                class="text-white text-sm font-medium leading-normal"
+                class="text-white text-sm font-medium leading-normal hover:underline"
                 href="./visit.html"
                 >Visit Us</a
               >
               <a
-                class="text-white text-sm font-medium leading-normal"
+                class="text-white text-sm font-medium leading-normal hover:underline"
                 href="./sermon.html"
                 >Sermons</a
               >
               <a
-                class="text-white text-sm font-medium leading-normal"
+                class="text-white text-sm font-medium leading-normal hover:underline"
                 href="./contact.html"
                 >Contact</a
               >
             </div>
             <a href="./contact.html">
               <button
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-4 bg-[#3d98f4] text-white text-sm font-bold leading-normal tracking-[0.015em]"
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-4 bg-[#3d98f4] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#357acc] transition"
               >
                 <span class="truncate" style="border-radius: 5px">Give</span>
               </button>
             </a>
           </div>
-        </header>
-        <div class="px-40 flex flex-1 justify-center py-5">
-          <div
-            class="layout-content-container flex flex-col max-w-[960px] flex-1"
+          <button
+            id="hamburger"
+            aria-label="Toggle menu"
+            class="md:hidden relative w-8 h-8 flex flex-col z-70 justify-center items-center gap-1"
+            type="button"
           >
+            <span
+              class="block w-6 h-[2px] bg-white rounded transition-transform origin-center"
+              id="line1"
+            ></span>
+            <span
+              class="block w-6 h-[2px] bg-white rounded transition-opacity"
+              id="line2"
+            ></span>
+            <span
+              class="block w-6 h-[2px] bg-white rounded transition-transform origin-center"
+              id="line3"
+            ></span>
+          </button>
+        </header>
+        <!--MOble NAv-->
+        <nav
+          id="sideNav"
+          class="fixed top-0 right-0 h-full w-64 bg-[#101a23] shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50"
+        >
+          <div
+            class="flex justify-between items-center px-6 py-4 border-b border-[#223649]"
+          >
+            <h3 class="text-white text-lg font-semibold">Menu</h3>
+            <button
+              id="closeBtn"
+              aria-label="Close menu"
+              class="text-white text-2xl font-bold"
+            >
+              X
+            </button>
+          </div>
+          <ul
+            class="flex flex-col gap-6 mt-6 px-6 text-white text-base font-medium"
+          >
+            <li>
+              <a
+                href="./index.html"
+                class="block hover:text-[#3d98f4] transition"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="./events.html"
+                class="block hover:text-[#3d98f4] transition"
+                >Events</a
+              >
+            </li>
+            <li>
+              <a
+                href="./visit.html"
+                class="block hover:text-[#3d98f4] transition"
+                >Visit Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="./sermon.html"
+                class="block hover:text-[#3d98f4] transition"
+                >Sermons</a
+              >
+            </li>
+            <li>
+              <a
+                href="./contact.html"
+                class="block hover:text-[#3d98f4] transition"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a href="./contact.html">
+                <button
+                  class="w-full rounded-md bg-[#3d98f4] px-4 py-2 font-bold tracking-[0.015em] hover:bg-[#357acc] transition"
+                >
+                  Give
+                </button>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div
+          id="overlay"
+          class="fixed inset-0 bg-black bg-opacity-20 opacity-0 pointer-events-none transition-opacity duration-300 z-40"
+        ></div>
+        <!--Overlay-->
+        <div class="px-4 md:px-40 flex flex-1 justify-center py-5">
+          <div class="flex flex-col flex-1 w-full">
             <div class="@container">
-              <div class="@[480px]:p-4">
+              <div class="@[480px]:p-4 p-4">
                 <div
-                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4"
+                  class="flex md:min-h-[480px] min-h-[400px] flex-col gap-6 bg-cover bg-center bg-no-repeat md:gap-8 rounded-xl items-center justify-center"
                   style="
                     background-image: linear-gradient(
                         rgba(0, 0, 0, 0.1) 0%,
@@ -110,7 +208,7 @@
                 >
                   <div class="flex flex-col gap-2 text-center items-center">
                     <h1
-                      class="text-white font-[Raleway] text-4xl font-black leading-tight @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight font-['Raleway']"
+                      class="text-white text-4xl font-black leading-tight @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight font-['Raleway']"
                     >
                       EMPHASIS ON RAISING MEN
                     </h1>
@@ -126,7 +224,7 @@
                     </h2>
                   </div>
                   <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#3490f3] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md hover:bg-blue-900 h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#3490f3] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
                   >
                     <span class="truncate">Partnership Enquiries</span>
                   </button>
@@ -282,24 +380,26 @@
             >
               Our Leadership
             </h2>
-            <div class="flex">
+            <div class="flex w-full">
               <div
-                class="flex gap-3 items-center justify-between h-full pb-3 mb-7"
+                class="flex md:flex-row flex-col w-full gap-3 items-center justify-between h-full px-5 pb-3 mb-7"
               >
                 <div
-                  class="bg-center shadow-xl rounded-lg h-[400px] bg-no-repeat aspect-square bg-cover border-solid"
+                  class="bg-center shadow-xl rounded-lg h-[80vw] md:h-[400px] bg-no-repeat aspect-square bg-cover border-solid"
                   style="
-                    background-image: url('./media/APOSLE_FAVOUR_MICHAEL._1_wgxeaw.svg');
+                    background-image: url(https://res.cloudinary.com/df8lfmv1j/image/upload/v1749306784/WhatsApp_Image_2024-06-17_at_11.22.03_0cad49b8_1_y6mzul_rtp7wb.png);
                   "
                 ></div>
 
-                <div class="w-1/2 flex flex-col justify-between py-4">
+                <div
+                  class="w-full md:w-1/2 flex flex-col justify-between py-4"
+                >
                   <h1
                     class="font-xl text-white font-['Raleway'] w-3/4 text-2xl font-bold leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal"
                   >
                     Apostle Favour Michael
                   </h1>
-                  <p class="mb-5">
+                  <p class="mb-5 text-[#90accb]">
                     Throughout the heaven and the earth Chinwuba is the honoured
                     and chosen one!!! An apostle, teacher, prophet, pastor, and
                     more, Apostle Favour Michael received the vision and started
@@ -308,7 +408,7 @@
                     his first year as a mechanical engineering student.
                   </p>
 
-                  <p>
+                  <p class="text-[#90accb]">
                     Apostle Favour is passionate about discipling and training
                     holistic kingdom emissaries who will be both relevant in
                     their world and also accurately portray Jesus in every
@@ -430,120 +530,14 @@
                 ></div>
               </div>
             </div>
-            <div class="px-4 py-3">
-              <div
-                class="flex flex-col gap-3 rounded-xl bg-[#223549] px-4 py-3"
-              >
-                <div class="flex items-center gap-4 overflow-hidden">
-                  <!-- Image -->
-                  <div
-                    class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14 shrink-0"
-                    style="
-                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBwqz_TZIgO4lK_MY0JsFQc3wnJB-gavilJs73tJCW5XmAVktOeIgZEtAKedP95BwT7uKKrhZo_VKahJUDVhuTOh42CaWAo8mMaTrEzYB1KluBdGuwOwckRxWUf7I-YSudWdlcYsFUpJt6ZJJ6yTkgEODkltMryyvgRWc2l1hja0LizyE4dB9pop9PNKZB7HubYGGQr5qwOuK9ZnalGJGG6yTSLmWNAviPrjwl_7SVCQtTrD7TdHwSz7JipAneti2cu3A2vkwTS05vQ');
-                    "
-                  ></div>
-
-                  <!-- Title & Author -->
-                  <div class="flex-1">
-                    <p
-                      class="text-white text-base font-bold leading-tight truncate"
-                    >
-                      Penny Least
-                    </p>
-                    <p
-                      class="text-[#90accb] text-sm font-normal leading-normal truncate"
-                    >
-                      Apostle Favour Michael
-                    </p>
-                  </div>
-
-                  <!-- Rewind 10s -->
-                  <button
-                    onclick="rewindAudio()"
-                    class="flex shrink-0 items-center justify-center rounded-full size-10 bg-gray-600 text-white hover:bg-gray-500"
-                    title="Rewind 10s"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-skip-backward-fill"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M7.21 8.47v4.79c0 .77-.86 1.23-1.5.82L.82 9.82c-.57-.36-.57-1.28 0-1.64L5.7 4.05c.64-.41 1.5.05 1.5.82v2.79L14.5 4.05c.64-.41 1.5.05 1.5.82v10.26c0 .77-.86 1.23-1.5.82L7.21 8.47z"
-                      />
-                    </svg>
-                  </button>
-
-                  <!-- Play/Pause Toggle -->
-                  <button
-                    onclick="togglePlay(this)"
-                    class="flex shrink-0 items-center justify-center rounded-full size-10 bg-[#3490f3] text-white hover:bg-blue-500"
-                    title="Play/Pause"
-                  >
-                    <span class="icon-play">
-                      <!-- Play Icon -->
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        fill="currentColor"
-                        viewBox="0 0 256 256"
-                      >
-                        <path
-                          d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"
-                        />
-                      </svg>
-                    </span>
-                    <span class="icon-pause hidden">
-                      <!-- Pause Icon -->
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        fill="currentColor"
-                        viewBox="0 0 256 256"
-                      >
-                        <path
-                          d="M104,40A16,16,0,0,0,88,56V200a16,16,0,0,0,32,0V56A16,16,0,0,0,104,40Zm64,0A16,16,0,0,0,152,56V200a16,16,0,0,0,32,0V56A16,16,0,0,0,168,40Z"
-                        />
-                      </svg>
-                    </span>
-                  </button>
-
-                  <!-- Forward 10s -->
-                  <button
-                    onclick="forwardAudio()"
-                    class="flex shrink-0 items-center justify-center rounded-full size-10 bg-gray-600 text-white hover:bg-gray-500"
-                    title="Forward 10s"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-skip-forward-fill"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M7.21 8.47v4.79c0 .77.86 1.23 1.5.82l4.88-3.26c.57-.36.57-1.28 0-1.64L8.7 4.05c-.64-.41-1.5.05-1.5.82v2.79L1.5 4.05c-.64-.41-1.5.05-1.5.82v10.26c0 .77.86 1.23 1.5.82L7.21 8.47z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-
-                <!-- Audio Element (Hidden) -->
-                <audio
-                  id="sermon-audio"
-                  src="https://res.cloudinary.com/df8lfmv1j/video/upload/v1749307477/Penny_Least_-_Apostle_Favour_Michael_-_Sermon_fzaoin.m4a"
-                ></audio>
-              </div>
-            </div>
+            <!-- <div class="px-4 py-3">
+              
+            </div> -->
           </div>
         </div>
-        <footer class="flex justify-center">
+        <footer
+          class="flex justify-center border-t border-solid border-t-[#223649]"
+        >
           <div class="flex max-w-[960px] flex-1 flex-col">
             <footer
               class="flex flex-col gap-6 px-5 py-10 text-center @container"
@@ -552,25 +546,25 @@
                 class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around"
               >
                 <a
-                  class="text-[#90accb] text-base font-normal leading-normal min-w-40"
+                  class="text-[#90adcb] text-base font-normal leading-normal min-w-40"
                   href="#"
                   >Privacy Policy</a
                 >
                 <a
-                  class="text-[#90accb] text-base font-normal leading-normal min-w-40"
+                  class="text-[#90adcb] text-base font-normal leading-normal min-w-40"
                   href="#"
                   >Terms of Service</a
                 >
                 <a
-                  class="text-[#90accb] text-base font-normal leading-normal min-w-40"
+                  class="text-[#90adcb] text-base font-normal leading-normal min-w-40"
                   href="#"
                   >Contact Us</a
                 >
               </div>
               <div class="flex flex-wrap justify-center gap-4">
-                <a href="#">
+                <a href="https://www.facebook.com/lightcarriersoutreach">
                   <div
-                    class="text-[#90accb]"
+                    class="text-[#90adcb]"
                     data-icon="FacebookLogo"
                     data-size="24px"
                     data-weight="regular"
@@ -588,10 +582,10 @@
                     </svg>
                   </div>
                 </a>
-                <a href="#">
+                <a href="https://www.youtube.com/@farosglobalchurch">
                   <div
-                    class="text-[#90accb]"
-                    data-icon="TwitterLogo"
+                    class="text-[#90adcb]"
+                    data-icon="YoutubeLogo"
                     data-size="24px"
                     data-weight="regular"
                   >
@@ -603,14 +597,14 @@
                       viewBox="0 0 256 256"
                     >
                       <path
-                        d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"
+                        d="M248,128a72.08,72.08,0,0,1-3.6,23.18c-3.21,10.41-11.11,18.66-21.51,21.88C204.58,178.67,128,178.67,128,178.67s-76.58,0-94.89-5.61c-10.4-3.22-18.3-11.47-21.51-21.88A72.08,72.08,0,0,1,8,128a72.08,72.08,0,0,1,3.6-23.18c3.21-10.41,11.11-18.66,21.51-21.88C51.42,77.33,128,77.33,128,77.33s76.58,0,94.89,5.61c10.4,3.22,18.3,11.47,21.51,21.88A72.08,72.08,0,0,1,248,128Zm-136-24v48l40-24Z"
                       ></path>
                     </svg>
                   </div>
                 </a>
-                <a href="#">
+                <a href="https://www.instagram.com/farosglobalchurch/">
                   <div
-                    class="text-[#90accb]"
+                    class="text-[#90adcb]"
                     data-icon="InstagramLogo"
                     data-size="24px"
                     data-weight="regular"
@@ -629,12 +623,10 @@
                   </div>
                 </a>
               </div>
-              <p class="text-[#90accb] text-base font-normal leading-normal">
+              <p class="text-[#90adcb] text-base font-normal leading-normal">
                 @2024 Faros Global Church. All rights reserved.
               </p>
             </footer>
-          </div>
-        </footer>
       </div>
     </div>
 
@@ -663,6 +655,50 @@
       function rewindAudio() {
         audio.currentTime -= 10;
       }
+    </script>
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const sideNav = document.getElementById("sideNav");
+      const overlay = document.getElementById("overlay");
+      const closeBtn = document.getElementById("closeBtn");
+      const line1 = document.getElementById("line1");
+      const line2 = document.getElementById("line2");
+      const line3 = document.getElementById("line3");
+
+      function openMenu() {
+        sideNav.classList.remove("translate-x-full");
+        overlay.classList.remove("opacity-0", "pointer-events-none");
+        // Animate hamburger to X
+        line1.style.transform = "rotate(45deg)";
+        line1.style.transformOrigin = "center";
+        line3.style.transform = "rotate(-45deg)";
+        line3.style.transformOrigin = "center";
+        line2.style.opacity = "0";
+      }
+
+      function closeMenu() {
+        sideNav.classList.add("translate-x-full");
+        overlay.classList.add("opacity-0", "pointer-events-none");
+        // Reset hamburger lines
+        line1.style.transform = "rotate(0)";
+        line3.style.transform = "rotate(0)";
+        line2.style.opacity = "1";
+      }
+
+      hamburger.addEventListener("click", () => {
+        if (sideNav.classList.contains("translate-x-full")) {
+          openMenu();
+        } else {
+          closeMenu();
+        }
+      });
+
+      closeBtn.addEventListener("click", closeMenu);
+      overlay.addEventListener("click", closeMenu);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
     </script>
   </body>
 </html>

@@ -1,5 +1,9 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
     <link
       rel="stylesheet"
@@ -8,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900"
     />
 
-    <title>Home Faros</title>
+    <title>Home</title>
     <!-- <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," /> -->
 
     <link rel="stylesheet" href="style.css" />
@@ -29,133 +33,189 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
 
-    <style>
-      .appear {
-        opacity: 0;
-        animation: fadeIn 1s forwards;
-        transform: translateY(100%);
-      }
+    <script>
+      tailwind.config = {
+        theme: {
+          screens: {
+            sm: "640px",
+            md: "815px", // ✅ custom md
+            lg: "1024px",
+            xl: "1280px",
+            "2xl": "1536px",
+          },
+        },
+      };
+    </script>
 
-      @keyframes fadeIn {
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .slide-in {
-        opacity: 0;
-        transform: translateX(-100%);
-        animation: slideIn 1s forwards;
-      }
-
-      @keyframes slideIn {
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-
-      /* Mobile design adjustments */
-      @media (max-width: 768px) {
-        .layout-container {
-          padding: 20px;
-        }
-        .layout-content-container {
-          padding: 10px;
-        }
-        /* Add more mobile-specific styles here */
-      }
-
-      /* Loading animation */
-      #loading {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        background: #101a23;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-      }
-
-      #loading.hidden {
-        display: none;
-      }
-    </style>
-
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Load Tailwind after config -->
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <div id="loading">
-      <div class="spinner"></div>
-    </div>
     <div
-      class="relative font-[Poppins] size-full min-h-screen flex-col bg-[#101a23] dark group/design-root overflow-x-hidden"
+      class="font-[Poppins] md:size-full md:min-h-screen flex-col bg-[#101a23] dark group/design-root"
     >
-      <div class="layout-container flex h-full grow flex-col">
+      <div class="md:layout-container flex h-full grow flex-col">
         <header
-          class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#223649] px-10 py-3"
+          class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#223649] px-7 md:px-10 py-3"
         >
           <div class="flex items-center gap-4 text-white">
-            <div class="size-12">
+            <div class="size-10 md:size-12">
               <img
                 src="https://res.cloudinary.com/df8lfmv1j/image/upload/v1749306709/favicon.ico_sy99lj.png"
                 alt=""
               />
             </div>
             <h2
-              class="text-white text-lg font-medium leading-tight"
+              class="text-white text-sm md:text-lg font-medium leading-tight"
               style="font-family: 'Raleway'"
             >
               Faros Global Church
             </h2>
           </div>
-          <div class="flex flex-1 justify-end gap-8">
-            <div class="flex items-center gap-9">
+          <div
+            class="hidden md:flex md:w-full md:justify-end md:gap-8 text-white text-sm font-medium leading-norma"
+          >
+            <div class="md:flex md:items-center md:gap-9">
               <a
-                class="text-white text-sm font-medium leading-normal"
+                class="text-white text-sm font-medium leading-normal hover:underline"
                 href="./about.html"
                 >About</a
               >
               <a
-                class="text-white text-sm font-medium leading-normal"
+                class="text-white text-sm font-medium leading-normal hover:underline"
                 href="./events.html"
                 >Events</a
               >
               <a
-                class="text-white text-sm font-medium leading-normal"
+                class="text-white text-sm font-medium leading-normal hover:underline"
                 href="./visit.html"
                 >Visit Us</a
               >
               <a
-                class="text-white text-sm font-medium leading-normal"
+                class="text-white text-sm font-medium leading-normal hover:underline"
                 href="./sermon.html"
                 >Sermons</a
               >
               <a
-                class="text-white text-sm font-medium leading-normal"
+                class="text-white text-sm font-medium leading-normal hover:underline"
                 href="./contact.html"
                 >Contact</a
               >
             </div>
             <a href="./contact.html">
               <button
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-4 bg-[#3d98f4] text-white text-sm font-bold leading-normal tracking-[0.015em]"
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-4 bg-[#3d98f4] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#357acc] transition"
               >
                 <span class="truncate" style="border-radius: 5px">Give</span>
               </button>
             </a>
           </div>
+          <button
+            id="hamburger"
+            aria-label="Toggle menu"
+            class="md:hidden relative w-8 h-8 flex flex-col z-70 justify-center items-center gap-1"
+            type="button"
+          >
+            <span
+              class="block w-6 h-[2px] bg-white rounded transition-transform origin-center"
+              id="line1"
+            ></span>
+            <span
+              class="block w-6 h-[2px] bg-white rounded transition-opacity"
+              id="line2"
+            ></span>
+            <span
+              class="block w-6 h-[2px] bg-white rounded transition-transform origin-center"
+              id="line3"
+            ></span>
+          </button>
         </header>
-        <div class="px-40 flex flex-1 justify-center py-5">
+        <!--MOble NAv-->
+        <nav
+          id="sideNav"
+          class="fixed top-0 right-0 h-full w-64 bg-[#101a23] shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50"
+        >
           <div
-            class="layout-content-container flex flex-col max-w-[960px] flex-1"
+            class="flex justify-between items-center px-6 py-4 border-b border-[#223649]"
+          >
+            <h3 class="text-white text-lg font-semibold">Menu</h3>
+            <button
+              id="closeBtn"
+              aria-label="Close menu"
+              class="text-white text-2xl font-bold"
+            >
+              X
+            </button>
+          </div>
+          <ul
+            class="flex flex-col gap-6 mt-6 px-6 text-white text-base font-medium"
+          >
+            <li>
+              <a
+                href="./about.html"
+                class="block hover:text-[#3d98f4] transition"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="./events.html"
+                class="block hover:text-[#3d98f4] transition"
+                >Events</a
+              >
+            </li>
+            <li>
+              <a
+                href="./visit.html"
+                class="block hover:text-[#3d98f4] transition"
+                >Visit Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="./sermon.html"
+                class="block hover:text-[#3d98f4] transition"
+                >Sermons</a
+              >
+            </li>
+            <li>
+              <a
+                href="./contact.html"
+                class="block hover:text-[#3d98f4] transition"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a href="./contact.html">
+                <button
+                  class="w-full rounded-md bg-[#3d98f4] px-4 py-2 font-bold tracking-[0.015em] hover:bg-[#357acc] transition"
+                >
+                  Give
+                </button>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div
+          id="overlay"
+          class="fixed inset-0 bg-black bg-opacity-20 opacity-0 pointer-events-none transition-opacity duration-300 z-40"
+        ></div>
+        <!--Overlay-->
+        <div class="px-4 [min-width:815px]:px-40 flex flex-1 justify-center">
+          <div
+            class="md:layout-content-container flex flex-col md:max-w-[960px] flex-1 w-full"
           >
             <div class="@container">
-              <div class="@[480px]:p-4">
+              <div class="p-4">
                 <div
-                  class="slide-in flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4"
+                  data-aos="fade-up"
+                  class="flex max-w-full h-auto min-h-[370px] md:min-h-[480px] flex-col md:gap-6 bg-cover bg-center bg-no-repeat gap-8 rounded-xl items-center justify-center p-4"
                   style="
                     background-image: linear-gradient(
                         rgba(0, 0, 0, 0.1) 0%,
@@ -166,13 +226,12 @@
                 >
                   <div class="flex flex-col gap-2 text-center items-center">
                     <h1
-                      class="text-white text-4xl font-black leading-tight @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
-                      style="font-family: 'Raleway', 'sans-serif"
+                      class="text-white text-3xl sm:text-5xl font-['Raleway'] font-black md:leading-tight"
                     >
                       Welcome to Faros Global Church
                     </h1>
                     <h2
-                      class="text-center w-3/4 text-sm leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal font-[Poppins]"
+                      class="text-center text-white w-full md:w-3/4 text-sm font-normal leading-normal font-[Poppins]"
                     >
                       We are an apostolic ministry with a mandate of raising
                       end-time-relevant men into different spheres of influence,
@@ -189,14 +248,17 @@
               </div>
             </div>
             <h2
-              class="text-white text-[32px] font-black font-[Raleway] tracking- px-4 pb-3 pt-9 mt-7 appear"
+              data-aos="fade-up"
+              class="text-white text-3xl sm:text-[32px] font-black font-[Raleway] tracking- px-4 md:pb-3 md:pt-9 mt-3 md:mt-7 appear"
             >
               Our Services
             </h2>
-            <div class="p-4 appear">
-              <div class="flex items-stretch justify-between gap-4 rounded-xl">
+            <div class="p-4" data-aos="fade-up">
+              <div
+                class="flex flex-col-reverse md:items-stretch md:flex-row justify-between gap-9 md:gap-4 rounded-xl"
+              >
                 <div class="flex flex-col gap-1 flex-[2_2_0px]">
-                  <p class="text-white text-base font-bold leading-tight">
+                  <p class="text-white md:text-base font-bold leading-tight">
                     Sunday Worship
                   </p>
                   <p class="text-[#90adcb] text-sm font-normal leading-normal">
@@ -209,13 +271,15 @@
                 <div
                   class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
                   style="
-                    background-image: url('https://res.cloudinary.com/df8lfmv1j/image/upload/v1749306770/WhatsApp_Image_2024-06-17_at_11.21.33_38f50e63_1_evgw3s_cw9wls.png);
+                    background-image: url(https://res.cloudinary.com/df8lfmv1j/image/upload/v1749306771/WhatsApp_Image_2024-06-17_at_11.21.52_4a192cfd_1_q0lkor_axk6fi.png);
                   "
                 ></div>
               </div>
             </div>
-            <div class="p-4 my-9">
-              <div class="flex items-stretch justify-between gap-4 rounded-xl">
+            <div class="p-4 my-9" data-aos="fade-up">
+              <div
+                class="flex flex-col-reverse md:items-stretch md:flex-row justify-between gap-9 md:gap-4 rounded-xl"
+              >
                 <div class="flex flex-col gap-1 flex-[2_2_0px]">
                   <p class="text-white text-base font-bold leading-tight">
                     Wednesday Service
@@ -237,6 +301,7 @@
               </div>
             </div>
             <button
+              data-aos="fade-up"
               class="flex min-w-[84px] max-w-[300px] mt-6 cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-4 mx-4 @[480px]:h-12 @[480px]:px-5 bg-[#3d98f4] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
             >
               <a
@@ -246,21 +311,25 @@
               >
             </button>
             <h2
+              data-aos="fade-up"
               class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-9 mt-5"
             >
               Featured Events
             </h2>
             <div
+              data-aos="fade-up"
               class="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden"
             >
-              <div class="flex items-stretch p-4 gap-3">
+              <div
+                class="flex md:flex-row w-full flex-col items-stretch p-4 gap-8 md:gap-3"
+              >
                 <div
-                  class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60"
+                  class="flex h-full w-full flex-1 flex-col gap-4 rounded-lg min-w-60"
                 >
                   <div
                     class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex flex-col"
                     style="
-                      background-image: url('https://res.cloudinary.com/df8lfmv1j/image/upload/v1749306791/WhatsApp_Image_2024-06-17_at_11.22.26_3aeaedc8_1_o4fezz_y2cuvg.png);
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDEKsysfJVIGBfi-da17cxh4S5lSfPqeUYylwPUhtoYSCLMAHTY9ZLYOoZz28FtrGriHPrSIrx_rVEZ9beOTmubDzl1f9SeAA0NzYwJha3UT2g90T20fEio699lGk6qJxy43Z5TMPX6oY8pSYOqxYnYhz2G8RfiOnjBVs0hed3Y829K-t6V0ivazVq5okM2T4auBY0orJaRUlcIofQ7zX5j5VxwL5loBTEzOckKdW877WJwRwiPZrfxiLe3DzyS7KonWuLFKmozcAcv');
                     "
                   ></div>
                   <div>
@@ -280,7 +349,7 @@
                   <div
                     class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex flex-col"
                     style="
-                      background-image: url('https://res.cloudinary.com/df8lfmv1j/image/upload/v1749306784/WhatsApp_Image_2024-06-17_at_11.22.03_0cad49b8_1_y6mzul_rtp7wb.pngise');
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDEKsysfJVIGBfi-da17cxh4S5lSfPqeUYylwPUhtoYSCLMAHTY9ZLYOoZz28FtrGriHPrSIrx_rVEZ9beOTmubDzl1f9SeAA0NzYwJha3UT2g90T20fEio699lGk6qJxy43Z5TMPX6oY8pSYOqxYnYhz2G8RfiOnjBVs0hed3Y829K-t6V0ivazVq5okM2T4auBY0orJaRUlcIofQ7zX5j5VxwL5loBTEzOckKdW877WJwRwiPZrfxiLe3DzyS7KonWuLFKmozcAcv');
                     "
                   ></div>
                   <div>
@@ -329,7 +398,7 @@
                 class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around"
               >
                 <a
-                  class="text-[#90adcb] text-base font-normal leading-normal min-w-40"
+                  class="text-[#90adcb] text-[16px] font-normal leading-normal min-w-40"
                   href="#"
                   >Privacy Policy</a
                 >
@@ -414,12 +483,49 @@
         </footer>
       </div>
     </div>
-
     <script>
-      // Hide loading animation after page load
-      window.addEventListener("load", function () {
-        document.getElementById("loading").classList.add("hidden");
+      const hamburger = document.getElementById("hamburger");
+      const sideNav = document.getElementById("sideNav");
+      const overlay = document.getElementById("overlay");
+      const closeBtn = document.getElementById("closeBtn");
+      const line1 = document.getElementById("line1");
+      const line2 = document.getElementById("line2");
+      const line3 = document.getElementById("line3");
+
+      function openMenu() {
+        sideNav.classList.remove("translate-x-full");
+        overlay.classList.remove("opacity-0", "pointer-events-none");
+        // Animate hamburger to X
+        line1.style.transform = "rotate(45deg)";
+        line1.style.transformOrigin = "center";
+        line3.style.transform = "rotate(-45deg)";
+        line3.style.transformOrigin = "center";
+        line2.style.opacity = "0";
+      }
+
+      function closeMenu() {
+        sideNav.classList.add("translate-x-full");
+        overlay.classList.add("opacity-0", "pointer-events-none");
+        // Reset hamburger lines
+        line1.style.transform = "rotate(0)";
+        line3.style.transform = "rotate(0)";
+        line2.style.opacity = "1";
+      }
+
+      hamburger.addEventListener("click", () => {
+        if (sideNav.classList.contains("translate-x-full")) {
+          openMenu();
+        } else {
+          closeMenu();
+        }
       });
+
+      closeBtn.addEventListener("click", closeMenu);
+      overlay.addEventListener("click", closeMenu);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
     </script>
   </body>
 </html>
