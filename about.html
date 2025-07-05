@@ -198,17 +198,35 @@
             <div class="@container md:pb-0">
               <div class="@[480px]:p-4 p-4">
                 <div
+                  id="hero-slideshow"
                   data-aos="fade-up"
                   class="flex md:min-h-[480px] min-h-[400px] flex-col gap-6 bg-cover bg-center bg-no-repeat md:gap-8 rounded-xl items-center justify-center"
-                  style="
-                    background-image: linear-gradient(
+                >
+                <!-- Background layers -->
+                  <div
+                    id="bg1"
+                    class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 opacity-100 z-0"
+                  ></div>
+                  <div
+                    id="bg2"
+                    class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 opacity-0 z-0"
+                  ></div>
+
+                  <!-- Gradient overlay -->
+                  <div
+                    class="absolute inset-0 z-10"
+                    style="
+                      background: linear-gradient(
                         rgba(0, 0, 0, 0.1) 0%,
                         rgba(0, 0, 0, 0.4) 100%
-                      ),
-                      url('https://res.cloudinary.com/df8lfmv1j/image/upload/v1749306787/WhatsApp_Image_2024-06-17_at_11.22.15_24d869ce_1_sb5zor_ynfj2n.png');
-                  "
-                >
-                  <div class="flex flex-col gap-2 text-center items-center">
+                      );
+                    "
+                  ></div>
+
+                  <!-- Content -->
+                  <div
+                    class="z-20 flex flex-col gap-2 text-center items-center"
+                  >
                     <h1
                       class="text-white text-4xl font-black leading-tight @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight font-['Raleway']"
                     >
@@ -260,7 +278,8 @@
             >
               <div
               data-aos="fade-up"
-                class="flex shadow-xl flex-1 gap-3 rounded-lg border border-[#314c68] bg-[#182634] p-4 flex-col"
+                class="flex shadow-xl flex-1 gap-3 rounded-lg border border-[#314c68] bg-[#182634] p-4 flex-col transition-transform duration-300 ease-in-out hover:-translate-y-2
+"
               >
                 <div
                   class="text-white"
@@ -292,7 +311,8 @@
               </div>
               <div
                 data-aos="fade-up"
-                class="flex flex-1 shadow-xl gap-3 rounded-lg border border-[#314c68] bg-[#182634] p-4 flex-col"
+                class="flex flex-1 shadow-xl gap-3 rounded-lg border border-[#314c68] bg-[#182634] p-4 flex-col transition-transform duration-300 ease-in-out hover:-translate-y-2
+"
               >
                 <div
                   class="text-white"
@@ -323,7 +343,8 @@
               </div>
               <div
               data-aos="fade-up"
-                class="flex flex-1 shadow-xl gap-3 rounded-lg border border-[#314c68] bg-[#182634] p-4 flex-col"
+                class="flex flex-1 shadow-xl gap-3 rounded-lg border border-[#314c68] bg-[#182634] p-4 flex-col transition-transform duration-300 ease-in-out hover:-translate-y-2
+"
               >
                 <div
                   class="text-white"
@@ -355,7 +376,8 @@
               </div>
               <div
                 data-aos="fade-up"
-                class="flex flex-1 shadow-xl gap-3 rounded-lg border border-[#314c68] bg-[#182634] p-4 flex-col"
+                class="flex flex-1 shadow-xl gap-3 rounded-lg border border-[#314c68] bg-[#182634] p-4 flex-col transition-transform duration-300 ease-in-out hover:-translate-y-2
+"
               >
                 <div
                   class="text-white"
@@ -400,7 +422,7 @@
                 <div
                   class="bg-center shadow-xl rounded-lg h-[80vw] md:h-[400px] bg-no-repeat aspect-square bg-cover border-solid"
                   style="
-                    background-image: url(https://res.cloudinary.com/df8lfmv1j/image/upload/v1749306784/WhatsApp_Image_2024-06-17_at_11.22.03_0cad49b8_1_y6mzul_rtp7wb.png);
+                    background-image: url(./afm.JPG);
                   "
                 ></div>
 
@@ -501,7 +523,7 @@
             data-aos="fade-up"
               class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5"
             >
-              Our Community
+              Featured Events
             </h2>
             <div
               class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4"
@@ -509,9 +531,9 @@
               <div class="flex flex-col gap-3"
               data-aos="fade-up">
                 <div
-                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  class="w-full bg-center md:bg-top bg-no-repeat aspect-square bg-cover rounded-xl"
                   style="
-                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAXqDZbiummgr6i804wJVq4nGg2P4rhxThwdiLQsMyuUf4wiAQQXsl1smKM_DMMSCMZiIWmwMVN5Xxpy9GyamIsEtG-YRsiMYCnwRAfmT9RyS3gescnTWZWDkJFQCsWYzE19hnOJwPmttpbJQQJo_YJ_VOkrJocj0d3P6JH9pDQCwgsSsamHYOwbolO-9xNni5ybA8r_Jrko1gFBlhZMAE1odINH2fGNnHdg_fSlmUlJOdzRKSrkwyOZBtyKq-uZaQgpoPyfWwWCpwR');
+                    background-image: url('https://res.cloudinary.com/df8lfmv1j/image/upload/v1751727010/photo_2025-07-05_14-38-09_ijfpto.jpg');
                   "
                 ></div>
               </div>
@@ -520,7 +542,7 @@
                 <div
                   class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
                   style="
-                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBVa9kpsgO0DV38T0MvBsuiXRFLPlbxCD_0eSMcws9TSS56PJaqMvMj-gCxndvQXtAfUo-21fMhgOZl7l-Gw5nGEDYUNhzHRREE70cIZAhU-9t2D8uTVe7AR1w9hwfeDCfZWS10pycqiR0PEafFFKY90RijjgfLhpJ3595CNPsTviYaUsybSLEpsuwBmG7UvVVik9FC1lheUnP4fdD-nr0EqhRWEZXGmZpG2vMDRQDzSEqSW4jFqEP3R38v6iLwolSrqxtEwKdxRPrt');
+                    background-image: url('https://res.cloudinary.com/df8lfmv1j/image/upload/v1751727008/photo_2025-07-05_14-36-40_mnc6nu.jpg');
                   "
                 ></div>
               </div>
@@ -529,7 +551,7 @@
                 <div
                   class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
                   style="
-                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCzp5RbhcWB3sGMdIVsXtRYQjnJN9xqUtEyoTJPTfLRtkHXolTcUNFKjQZBWlwClE1JvfDL9Y64_z70uW-P3I2UcDRyyRkhLf5DziJ2KpvDrQIRNsLtRCDDL_YdLspEK_ieGI7lw5RnK8EdfFIAx3rdvl_VuV75C3OwCQz1tIpHl2wEcAxaoyOeM04KHaK-NnZb4_cAsfKnEX0nYzdgYlZUf7OK4VK3K5PZIs7kGicsCST2RRj2YU7b8ngeltNT_uUGfJgCM8ETX8Gx');
+                    background-image: url('https://res.cloudinary.com/df8lfmv1j/image/upload/v1751727034/photo_2025-07-05_14-38-40_cn0u7m.jpg');
                   "
                 ></div>
               </div>
@@ -538,7 +560,7 @@
                 <div
                   class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
                   style="
-                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAautvZTnTMmw4BzcNKFQyaWnI12NMHvgUKpyCw2p11ia5BLDbfxQqGxvCYGshzc55LjDZvFLuqSV2Xs-YBzooEO6h6_1AmXyYDNz24FdTHC-Gvl0gXkNCc3wHfw7w3FF90I4ne2orIkNJx0X1Hjjk4YbFPj3zdRdLkHYkdEUeduiqDe_j-DpQxX2Pmi1M6BCDPd8797uTVExXNEC9_2VodvQJu3WDUMwKK_v1zaVNZ4urul5Vge1I_deJoiJKfupa2sLbm3d0U5LW3');
+                    background-image: url('https://res.cloudinary.com/df8lfmv1j/image/upload/v1751727041/photo_2025-07-05_14-39-23_uk8prt.jpg');
                   "
                 ></div>
               </div>
@@ -547,7 +569,7 @@
                 <div
                   class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
                   style="
-                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCnUiiDmaY6cGMLwF_ryDa5MJ8Vo-fd898szeHyBJjgaBLOUJj04cUAi6IH-duxjWJLdYyvsY10zPw2nw4l1Fe8O99FIahR6cQmR5m1H2EtqMb6yH5gBUgSN0KcknnYelp9aRQvr5Hlh7oa82JMvxketDjlGkP2IHApRJu-GcD5wZltxKfoq8MypsmJ0zk20RwGbwcLLkac5hxyf3zdi4ssCbknsn_jy-BceE9s_hjtYCj7Z2Nr8naxIFSZTMtHH28Z3TGy1NHzIK3h');
+                    background-image: url('https://res.cloudinary.com/df8lfmv1j/image/upload/v1751729553/photo_2025-07-05_16-31-16_iju6pg.jpg');
                   "
                 ></div>
               </div>
@@ -722,6 +744,46 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init();
+    </script>
+    <script>
+      const images = [
+        "https://res.cloudinary.com/df8lfmv1j/image/upload/v1749306787/WhatsApp_Image_2024-06-17_at_11.22.15_24d869ce_1_sb5zor_ynfj2n.png",
+        "https://res.cloudinary.com/df8lfmv1j/image/upload/v1751036060/DSC_0261_cinrtq.jpg",
+        "https://res.cloudinary.com/df8lfmv1j/image/upload/v1751035823/DSC_0467_qmr86w.jpg",
+      ];
+
+      let currentIndex = 0;
+      let showingBg1 = true;
+
+      const bg1 = document.getElementById("bg1");
+      const bg2 = document.getElementById("bg2");
+
+      function updateBackground() {
+        const nextImage = images[currentIndex];
+        if (showingBg1) {
+          bg2.style.backgroundImage = `url(${nextImage})`;
+          bg2.classList.remove("opacity-0");
+          bg2.classList.add("opacity-100");
+          bg1.classList.remove("opacity-100");
+          bg1.classList.add("opacity-0");
+        } else {
+          bg1.style.backgroundImage = `url(${nextImage})`;
+          bg1.classList.remove("opacity-0");
+          bg1.classList.add("opacity-100");
+          bg2.classList.remove("opacity-100");
+          bg2.classList.add("opacity-0");
+        }
+
+        showingBg1 = !showingBg1;
+        currentIndex = (currentIndex + 1) % images.length;
+      }
+
+      // Set first image
+      bg1.style.backgroundImage = `url(${images[0]})`;
+      currentIndex = 1;
+
+      // Start slideshow every 6 seconds
+      setInterval(updateBackground, 6000);
     </script>
   </body>
 </html>

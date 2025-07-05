@@ -57,9 +57,10 @@
   </head>
   <body>
     <div
-      class="font-[Poppins] md:size-full md:min-h-screen flex-col bg-[#101a23] dark group/design-root"
+      class="relative font-[Poppins] md:size-full md:min-h-screen flex-col bg-[#101a23] dark group/design-root"
     >
-      <div class="md:layout-container flex h-full grow flex-col">
+      <!-- <div class="absolute inset-0 bg-black/50 z-10"></div> -->
+      <div class="md:layout-container relative h-full grow flex-col">
         <header
           class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#223649] px-7 md:px-10 py-3"
         >
@@ -214,17 +215,35 @@
             <div class="@container pb-5">
               <div class="p-4">
                 <div
+                  id="hero-slideshow"
                   data-aos="fade-up"
-                  class="flex max-w-full h-auto min-h-[370px] md:min-h-[480px] flex-col md:gap-6 bg-cover bg-center bg-no-repeat gap-8 rounded-xl items-center justify-center p-4"
-                  style="
-                    background-image: linear-gradient(
+                  class="relative flex max-w-full h-auto min-h-[370px] md:min-h-[480px] flex-col md:gap-6 bg-cover bg-center bg-no-repeat gap-8 rounded-xl items-center justify-center p-4 overflow-hidden transition-all duration-1000"
+                >
+                  <!-- Background layers -->
+                  <div
+                    id="bg1"
+                    class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 opacity-100 z-0"
+                  ></div>
+                  <div
+                    id="bg2"
+                    class="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 opacity-0 z-0"
+                  ></div>
+
+                  <!-- Gradient overlay -->
+                  <div
+                    class="absolute inset-0 z-10"
+                    style="
+                      background: linear-gradient(
                         rgba(0, 0, 0, 0.1) 0%,
                         rgba(0, 0, 0, 0.4) 100%
-                      ),
-                      url('https://res.cloudinary.com/df8lfmv1j/image/upload/v1749306766/JESUS_CAMPAIGN..._1_wh332l_zjjqlp.svg');
-                  "
-                >
-                  <div class="flex flex-col gap-2 text-center items-center">
+                      );
+                    "
+                  ></div>
+
+                  <!-- Content -->
+                  <div
+                    class="z-20 flex flex-col gap-2 text-center items-center"
+                  >
                     <h1
                       class="text-white text-3xl sm:text-5xl font-['Raleway'] font-black md:leading-tight"
                     >
@@ -239,9 +258,10 @@
                       advancement of God's kingdom.
                     </h2>
                   </div>
+
                   <button
                     id="exp"
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#3d98f4] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
+                    class="z-20 flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#3d98f4] text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
                   >
                     <span class="truncate">Explore</span>
                   </button>
@@ -263,7 +283,7 @@
                     Sunday Worship
                   </p>
                   <p class="text-[#90adcb] text-sm font-normal leading-normal">
-                    Join us by 5:00PM. <br />An atmosphere of worship,
+                    Join us by 3:00PM. <br />An atmosphere of worship,
                     fellowship, revelatory teachings, and miracles: every
                     service is an opportunity for a life-impacting experience in
                     God's presence. You don't want to miss out!
@@ -272,7 +292,7 @@
                 <div
                   class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
                   style="
-                    background-image: url(https://res.cloudinary.com/df8lfmv1j/image/upload/v1749306771/WhatsApp_Image_2024-06-17_at_11.21.52_4a192cfd_1_q0lkor_axk6fi.png);
+                    background-image: url(https://res.cloudinary.com/df8lfmv1j/image/upload/v1751036988/DSC_0467_fdqlq7.jpg);
                   "
                 ></div>
               </div>
@@ -309,9 +329,7 @@
                 </div>
                 <div
                   class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
-                  style="
-                    background-image: url(https://res.cloudinary.com/df8lfmv1j/image/upload/v1749306771/WhatsApp_Image_2024-06-17_at_11.21.52_4a192cfd_1_q0lkor_axk6fi.png);
-                  "
+                  style="background-image: url(./faros1.JPG)"
                 ></div>
               </div>
             </div>
@@ -320,7 +338,7 @@
               data-aos="fade-up"
               class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-9 mt-5"
             >
-              Featured Events
+              Anticpate
               <a href="#exp"></a>
             </h2>
             <div
@@ -336,7 +354,7 @@
                   <div
                     class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex flex-col"
                     style="
-                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDEKsysfJVIGBfi-da17cxh4S5lSfPqeUYylwPUhtoYSCLMAHTY9ZLYOoZz28FtrGriHPrSIrx_rVEZ9beOTmubDzl1f9SeAA0NzYwJha3UT2g90T20fEio699lGk6qJxy43Z5TMPX6oY8pSYOqxYnYhz2G8RfiOnjBVs0hed3Y829K-t6V0ivazVq5okM2T4auBY0orJaRUlcIofQ7zX5j5VxwL5loBTEzOckKdW877WJwRwiPZrfxiLe3DzyS7KonWuLFKmozcAcv');
+                      background-image: url('https://res.cloudinary.com/df8lfmv1j/image/upload/v1751727868/1198015251_ajg2ag.jpg');
                     "
                   ></div>
                   <div>
@@ -346,7 +364,7 @@
                     <p
                       class="text-[#90adcb] text-sm font-normal leading-normal"
                     >
-                      Join us for our annual community outreach event.
+                      Join us for in worship.
                     </p>
                   </div>
                 </div>
@@ -378,7 +396,7 @@
                   <div
                     class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex flex-col"
                     style="
-                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDEKsysfJVIGBfi-da17cxh4S5lSfPqeUYylwPUhtoYSCLMAHTY9ZLYOoZz28FtrGriHPrSIrx_rVEZ9beOTmubDzl1f9SeAA0NzYwJha3UT2g90T20fEio699lGk6qJxy43Z5TMPX6oY8pSYOqxYnYhz2G8RfiOnjBVs0hed3Y829K-t6V0ivazVq5okM2T4auBY0orJaRUlcIofQ7zX5j5VxwL5loBTEzOckKdW877WJwRwiPZrfxiLe3DzyS7KonWuLFKmozcAcv');
+                      background-image: url('https://res.cloudinary.com/df8lfmv1j/image/upload/v1751727869/352122469_g1osyn.jpg');
                     "
                   ></div>
                   <div>
@@ -535,6 +553,46 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init();
+    </script>
+    <script>
+      const images = [
+        "https://res.cloudinary.com/df8lfmv1j/image/upload/v1749306766/JESUS_CAMPAIGN..._1_wh332l_zjjqlp.svg",
+        "https://res.cloudinary.com/df8lfmv1j/image/upload/v1751036986/DSC_0137_rr0rwu.jpg",
+        "https://res.cloudinary.com/df8lfmv1j/image/upload/v1751036987/DSC_0456_pd2x5v.jpg",
+      ];
+
+      let currentIndex = 0;
+      let showingBg1 = true;
+
+      const bg1 = document.getElementById("bg1");
+      const bg2 = document.getElementById("bg2");
+
+      function updateBackground() {
+        const nextImage = images[currentIndex];
+        if (showingBg1) {
+          bg2.style.backgroundImage = `url(${nextImage})`;
+          bg2.classList.remove("opacity-0");
+          bg2.classList.add("opacity-100");
+          bg1.classList.remove("opacity-100");
+          bg1.classList.add("opacity-0");
+        } else {
+          bg1.style.backgroundImage = `url(${nextImage})`;
+          bg1.classList.remove("opacity-0");
+          bg1.classList.add("opacity-100");
+          bg2.classList.remove("opacity-100");
+          bg2.classList.add("opacity-0");
+        }
+
+        showingBg1 = !showingBg1;
+        currentIndex = (currentIndex + 1) % images.length;
+      }
+
+      // Set first image
+      bg1.style.backgroundImage = `url(${images[0]})`;
+      currentIndex = 1;
+
+      // Start slideshow every 6 seconds
+      setInterval(updateBackground, 6000);
     </script>
   </body>
 </html>
